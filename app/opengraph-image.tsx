@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 
+export const runtime = "nodejs";
 export const alt =
   "지오픽 (GEO-Pick) — 손님이 AI에게 물어볼 때, 우리 가게가 답이 됩니다.";
 export const size = { width: 1200, height: 630 };
