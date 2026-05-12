@@ -1,0 +1,21 @@
+node_modules
+.next
+out
+.git
+.gitignore
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+Thumbs.db
+
+# Design reference — not needed in the runtime image
+web_디자인
+
+# Plans / specs — not needed in the runtime image
+GEO_공식웹사이트_기획안.md
+
+# Local IDE
+.vscode
+.idea

@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GEO — 손님이 AI에게 물어볼 때, 우리 가게가 답이 됩니다.</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-light accent-orange pair-editorial" data-hero="chat">
+
+<!-- ─────── NAV ─────── -->
+<nav class="nav on-dark" id="nav">
+  <a class="nav__logo" href="#top">
+    <span class="nav__logo-mark">G</span>
+    <span>GEO</span>
+  </a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="#diagnosis">진단</a>
+      <a href="#about">우리는</a>
+      <a href="#how">작동 원리</a>
+      <a href="#cases">사례</a>
+      <a href="#pricing">가격</a>
+    </div>
+    <a class="btn btn--dark" href="#form" id="navCta">
+      무료 진단 신청
+      <span class="btn-arrow">→</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ─────── HERO ─────── -->
+<section class="hero" id="top">
+  <div class="hero__aurora" aria-hidden="true"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div>
+      <div class="eyebrow hero__eyebrow">
+        <span class="dot"></span>
+        <span>Generative Engine Optimization · 2026</span>
+      </div>
+
+      <h1 class="hero__title" id="heroTitle">
+        요즘 손님은 <span class="serif">Naver</span>가 아니라<br/>
+        <span class="hl">ChatGPT</span>한테 물어봅니다.
+      </h1>
+
+      <p class="hero__sub" id="heroSub">
+        거기서 우리 가게가 안 뜨면, 그 손님은 영영 안 옵니다.<br/>
+        GEO는 AI 검색 안에 브랜드를 정확히 위치시키는 일을 합니다.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#form" class="btn btn--primary btn--lg">
+          내 가게 무료 진단 받기
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#how" class="btn btn--ghost btn--lg">작동 원리 보기</a>
+      </div>
+
+      <div class="hero__notes">
+        <span>1분 소요</span>
+        <span>비용 없음</span>
+        <span>진단 결과 PDF 카톡 발송</span>
+      </div>
+    </div>
+
+    <!-- ChatGPT mock visual -->
+    <div class="hero__visual" id="heroVisualChat">
+      <div class="chat-mock" id="chatMock">
+        <div class="chat-aside chat-aside--tl">live · AI search</div>
+        <div class="chat-mock__top">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span>chat.openai.com</span>
+          <span style="opacity:.5">⌘K</span>
+        </div>
+        <div class="chat-mock__body">
+          <div class="chat-msg chat-msg--user">
+            <div class="chat-msg__role"><span>USER</span></div>
+            <div class="bub">강남에서 리프팅 잘하는 피부과 추천해줘</div>
+          </div>
+          <div class="chat-msg chat-msg--ai">
+            <div class="chat-msg__role"><span class="av">AI</span><span>CHATGPT</span></div>
+            <div class="bub">
+              <div id="aiTyped">강남 지역에서 리프팅 시술로 평이 좋은 곳을 정리해드릴게요.</div>
+              <div class="chat-rank" id="aiRanks" style="display:none;">
+                <div class="chat-rank__item highlight" data-rank="1">
+                  <span class="chat-rank__num">1</span>
+                  <span class="chat-rank__name">A 피부과</span>
+                  <span class="chat-rank__tag">CLIENT</span>
+                </div>
+                <div class="chat-rank__item" data-rank="2">
+                  <span class="chat-rank__num">2</span>
+                  <span class="chat-rank__name">B 피부과</span>
+                  <span class="chat-rank__tag">강남</span>
+                </div>
+                <div class="chat-rank__item" data-rank="3">
+                  <span class="chat-rank__num">3</span>
+                  <span class="chat-rank__name">C 클리닉</span>
+                  <span class="chat-rank__tag">신사</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-aside chat-aside--br">+218% 노출</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__foot">
+    <div class="hero__foot-item"><span class="k">tracked queries / week</span><span class="v tabular">500+</span></div>
+    <div class="hero__foot-item"><span class="k">avg. visibility lift</span><span class="v tabular">3.1×</span></div>
+    <div class="hero__foot-item"><span class="k">engines covered</span><span class="v">GPT · Perplexity · Gemini · Naver</span></div>
+    <div class="hero__foot-item"><span class="k">법적 위반 사례</span><span class="v tabular">0건</span></div>
+  </div>
+</section>
+
+<!-- ─────── 2. PAIN POINTS ─────── -->
+<section class="section section--paper" id="diagnosis">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">01 · Diagnosis</span>
+      <h2 class="h-display">
+        원장님, 사장님 —<br/>
+        요즘 이런 고민, <span class="serif">있으시죠?</span>
+      </h2>
+      <p class="lead">하나라도 해당된다면, 바뀌고 있는 검색 시장 때문일 수 있습니다.</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card" data-reveal style="--rdelay:0ms">
+        <span class="pain-card__num">01</span>
+        <p class="pain-card__txt">광고비는 매년 오르는데<br/>예약은 오히려 줄어든다</p>
+      </div>
+      <div class="pain-card" data-reveal style="--rdelay:60ms">
+        <span class="pain-card__num">02</span>
+        <p class="pain-card__txt">손님이 진료실에서<br/>"ChatGPT에서 보고 왔어요" 한다</p>
+      </div>
+      <div class="pain-card" data-reveal style="--rdelay:120ms">
+        <span class="pain-card__num">03</span>
+        <p class="pain-card__txt">옆 가게는 잘 된다는데<br/>우리는 왜 안 보일까</p>
+      </div>
+      <div class="pain-card" data-reveal style="--rdelay:180ms">
+        <span class="pain-card__num">04</span>
+        <p class="pain-card__txt">의료법 무서워서<br/>콘텐츠도 함부로 못 만든다</p>
+      </div>
+      <div class="pain-card" data-reveal style="--rdelay:240ms">
+        <span class="pain-card__num">05</span>
+        <p class="pain-card__txt">대행사 보고서를 봐도<br/>결과가 안 보인다</p>
+      </div>
+    </div>
+
+    <div class="pain-stats" data-reveal>
+      <div class="pain-stat">
+        <div class="pain-stat__big"><span class="accent">73</span><span class="unit">%</span></div>
+        <p class="pain-stat__txt">20~40대가 AI에 가게를<br/>물어본 경험이 있습니다.</p>
+      </div>
+      <div class="pain-stat">
+        <div class="pain-stat__big"><span class="accent">58</span><span class="unit">%</span></div>
+        <p class="pain-stat__txt">AI 추천 결과를 보고<br/>실제 방문을 결정합니다.</p>
+      </div>
+      <div class="pain-stat">
+        <div class="pain-stat__big"><span class="accent">3.2</span><span class="unit">×</span></div>
+        <p class="pain-stat__txt">AI 추천 손님 구매전환율은<br/>네이버 검색 손님 대비 약 3배.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 3. ABOUT ─────── -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">02 · About</span>
+      <h2 class="h-display">
+        저희는 <span class="serif">AI 안에서</span><br/>
+        브랜드가 사라지지 않게 하는 일을 합니다.
+      </h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy" data-reveal>
+        <p>
+          <strong>지오에이엠에스</strong>는 'AI가 답을 만드는 시대'에
+          가게가 사라지지 않도록 브랜드를 AI 안에 보이게 만듭니다.
+        </p>
+        <p>
+          강남 피부과부터 분당 한의원, 전국 프랜차이즈까지
+          <strong>200여 곳</strong>의 노출을 매주 직접 측정하고
+          데이터로 키워왔습니다.
+        </p>
+        <p style="font-size:16px; color:var(--fg-muted); margin-top:32px;">
+          — Generative Engine Optimization. 검색이 아니라 추천을 다룹니다.
+        </p>
+      </div>
+
+      <div class="about-card" data-reveal style="--rdelay:120ms">
+        <div class="about-card__label">GEO-AMS / Proprietary system</div>
+        <h3>저희가 운영하는<br/>전용 측정·최적화 시스템.</h3>
+        <p>
+          ChatGPT · Perplexity · Gemini · 네이버 AI까지
+          손님이 묻는 <em>수백 가지 질문</em>에 우리 가게가
+          얼마나 추천되는지 매주 자동으로 측정합니다.
+        </p>
+        <p>
+          그 결과를 바탕으로 의료법·광고법을 어기지 않는
+          콘텐츠를 만들어, AI가 우리 가게를 더 자주
+          추천하도록 설계합니다.
+        </p>
+        <div class="about-card__stats">
+          <div class="about-card__stat">
+            <div class="v tabular">3.1×</div>
+            <div class="k">클라이언트 평균<br/>노출 향상</div>
+          </div>
+          <div class="about-card__stat">
+            <div class="v tabular">0건</div>
+            <div class="k">의료광고법<br/>위반 적발</div>
+          </div>
+          <div class="about-card__stat">
+            <div class="v tabular">500+</div>
+            <div class="k">매주 자동 측정<br/>쿼리 수</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 4. HOW IT WORKS (5 steps) ─────── -->
+<section class="section section--paper" id="how">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">03 · How it works</span>
+      <h2 class="h-display">
+        이렇게 해결합니다 —<br/>
+        <span class="serif">5단계</span>로 끝.
+      </h2>
+      <p class="lead">측정 → 진단 → 처방 → 실행 → 추적. 매주 같은 사이클을 반복합니다.</p>
+    </div>
+
+    <div class="steps" data-reveal>
+      <div class="step">
+        <span class="step__num">01</span>
+        <h3 class="step__title">측정</h3>
+        <p class="step__txt">AI가 우리 가게를 추천하는지 수백 가지 질문으로 직접 확인합니다.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">02</span>
+        <h3 class="step__title">진단</h3>
+        <p class="step__txt">추천이 안 나오는 진짜 원인을 찾습니다. 정보 부족인지, 잘못된 정보인지, 경쟁 강세인지.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">03</span>
+        <h3 class="step__title">처방</h3>
+        <p class="step__txt">의료법·광고법에 안전한 콘텐츠 전략을 수립합니다. 위험 표현은 시스템이 자동 차단.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">04</span>
+        <h3 class="step__title">실행</h3>
+        <p class="step__txt">콘텐츠 제작 → 사장님 승인 → 배포. 직접 보지 않은 글은 절대 올라가지 않습니다.</p>
+      </div>
+      <div class="step">
+        <span class="step__num">05</span>
+        <h3 class="step__title">추적</h3>
+        <p class="step__txt">매주 다시 측정해 효과를 확인합니다. 안 오르면 즉시 수정합니다.</p>
+      </div>
+    </div>
+
+    <div class="steps-outcome" data-reveal>
+      <p class="steps-outcome__txt">
+        <b>노출 → 신뢰 → 방문 → <span class="accent">매출 극대화.</span></b><br/>
+        이 흐름 전체를 데이터로 확인하면서 키워나갑니다.
+      </p>
+      <a href="#form" class="btn btn--dark btn--lg">
+        우리 가게부터 시작하기
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 5. CASES ─────── -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">04 · Cases</span>
+      <h2 class="h-display">
+        진짜 되긴 해?<br/>
+        <span class="serif">숫자로</span> 보여드립니다.
+      </h2>
+      <p class="lead">실제 클라이언트의 AI 추천 노출률 변화. 데이터는 매주 자동 측정된 결과입니다.</p>
+    </div>
+
+    <div class="case-list">
+      <article class="case-card" data-reveal>
+        <div class="case-card__meta">
+          <span class="case-card__industry">CASE 01 · 피부과 · 강남</span>
+          <h3 class="case-card__name">A 피부과</h3>
+          <p class="case-card__query">
+            <span class="q">"강남에서 리프팅 추천해줘"</span><br/>
+            ChatGPT 답변 내 노출률 (3개월 추적)
+          </p>
+          <blockquote class="case-card__quote">
+            "하루 평균 신규 예약이 7건에서 13건으로 거의 두 배가 됐습니다.
+            특히 ChatGPT 보고 왔다는 손님이 눈에 띄게 늘었어요."
+            <cite>— A 피부과 마케팅 실장</cite>
+          </blockquote>
+        </div>
+        <div class="case-card__delta">
+          <span class="case-card__delta-label">ChatGPT 노출률 변화</span>
+          <div class="case-card__numbers tabular">
+            <span class="from">12%</span>
+            <span class="arrow">→</span>
+            <span class="to">38<span class="unit">%</span></span>
+          </div>
+          <span class="case-card__period">2026.01 — 2026.04 / 3개월</span>
+          <div class="case-card__bars">
+            <div class="case-bar">
+              <span class="case-bar__label">Before</span>
+              <div class="case-bar__track"><div class="case-bar__fill case-bar__fill--muted" style="--w:12%"></div></div>
+              <span class="case-bar__v tabular">12%</span>
+            </div>
+            <div class="case-bar">
+              <span class="case-bar__label">After</span>
+              <div class="case-bar__track"><div class="case-bar__fill" style="--w:38%"></div></div>
+              <span class="case-bar__v tabular">38%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" data-reveal>
+        <div class="case-card__meta">
+          <span class="case-card__industry">CASE 02 · 한의원 · 분당</span>
+          <h3 class="case-card__name">B 한의원</h3>
+          <p class="case-card__query">
+            <span class="q">"분당 한의원 추천"</span><br/>
+            Perplexity 검색 순위 (6주 추적)
+          </p>
+          <blockquote class="case-card__quote">
+            "Perplexity 1순위 되고 나서 첫 달부터 신환이 늘었습니다.
+            매출 그래프가 처음으로 위로 꺾였습니다."
+            <cite>— B 한의원 원장</cite>
+          </blockquote>
+        </div>
+        <div class="case-card__delta">
+          <span class="case-card__delta-label">월 매출 변화</span>
+          <div class="case-card__numbers tabular">
+            <span class="from">1,800만</span>
+            <span class="arrow">→</span>
+            <span class="to">2,650<span class="unit">만</span></span>
+          </div>
+          <span class="case-card__period">Perplexity 1순위 6주차 달성</span>
+          <div class="case-card__bars">
+            <div class="case-bar">
+              <span class="case-bar__label">Before</span>
+              <div class="case-bar__track"><div class="case-bar__fill case-bar__fill--muted" style="--w:50%"></div></div>
+              <span class="case-bar__v tabular">₩18.0M</span>
+            </div>
+            <div class="case-bar">
+              <span class="case-bar__label">After</span>
+              <div class="case-bar__track"><div class="case-bar__fill" style="--w:74%"></div></div>
+              <span class="case-bar__v tabular">₩26.5M</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card" data-reveal>
+        <div class="case-card__meta">
+          <span class="case-card__industry">CASE 03 · 에스테틱 · 청담</span>
+          <h3 class="case-card__name">C 에스테틱</h3>
+          <p class="case-card__query">
+            <span class="q">"청담 피부관리 어디 잘해?"</span><br/>
+            Gemini · ChatGPT 추천 점유율 (8주 추적)
+          </p>
+          <blockquote class="case-card__quote">
+            "광고비를 줄였는데도 신규 예약이 늘었습니다.
+            그게 제일 놀랐어요. 가성비 자체가 달라진 거죠."
+            <cite>— C 에스테틱 대표</cite>
+          </blockquote>
+        </div>
+        <div class="case-card__delta">
+          <span class="case-card__delta-label">AI 추천 점유율</span>
+          <div class="case-card__numbers tabular">
+            <span class="from">8%</span>
+            <span class="arrow">→</span>
+            <span class="to">29<span class="unit">%</span></span>
+          </div>
+          <span class="case-card__period">2026.02 — 2026.04 / 8주</span>
+          <div class="case-card__bars">
+            <div class="case-bar">
+              <span class="case-bar__label">Before</span>
+              <div class="case-bar__track"><div class="case-bar__fill case-bar__fill--muted" style="--w:8%"></div></div>
+              <span class="case-bar__v tabular">8%</span>
+            </div>
+            <div class="case-bar">
+              <span class="case-bar__label">After</span>
+              <div class="case-bar__track"><div class="case-bar__fill" style="--w:29%"></div></div>
+              <span class="case-bar__v tabular">29%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="pricing-note" style="margin-top:32px;">
+      * 모든 수치는 placeholder입니다. 실제 사례 데이터는 클라이언트 동의 후 공개됩니다.
+    </p>
+  </div>
+</section>
+
+<!-- ─────── 6. PROCESS TIMELINE ─────── -->
+<section class="section section--paper" id="process">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">05 · Process</span>
+      <h2 class="h-display">
+        신청하면<br/>
+        <span class="serif">이렇게</span> 진행됩니다.
+      </h2>
+      <p class="lead">계약 전까지는 한 푼도 들지 않습니다. Day 0부터 Month 3까지의 흐름.</p>
+    </div>
+
+    <div class="timeline" data-reveal>
+      <div class="timeline__row">
+        <span class="timeline__when">Day 0</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">무료 진단 신청</h3>
+          <p class="timeline__txt">이름·전화·업종 3줄만 입력하면 끝.</p>
+        </div>
+      </div>
+      <div class="timeline__row">
+        <span class="timeline__when">Day 1</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">진단 보고서 카톡 발송</h3>
+          <p class="timeline__txt">현재 노출 상태 · 경쟁사 비교 · 개선 가능성. PDF로 받으세요.</p>
+        </div>
+      </div>
+      <div class="timeline__row">
+        <span class="timeline__when">Day 3</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">1:1 상담 미팅 (온/오프라인)</h3>
+          <p class="timeline__txt">전담 매니저가 결과를 직접 설명합니다. 결정은 그 다음에.</p>
+        </div>
+      </div>
+      <div class="timeline__row">
+        <span class="timeline__when">Week 1</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">계약 후 본격 시작</h3>
+          <p class="timeline__txt">매장 정보 · 경쟁사 · 핵심 키워드 세팅.</p>
+        </div>
+      </div>
+      <div class="timeline__row">
+        <span class="timeline__when">Week 2</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">첫 콘텐츠 사장님 검토 요청</h3>
+          <p class="timeline__txt">반드시 사장님 승인 후에만 배포됩니다. 위험 표현은 시스템이 자동 차단.</p>
+        </div>
+      </div>
+      <div class="timeline__row">
+        <span class="timeline__when">Week 4</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">첫 정기 리포트 도착</h3>
+          <p class="timeline__txt">한 달간 무엇이 어떻게 바뀌었는지 한눈에. 단순 PDF, 비전문가용 언어.</p>
+        </div>
+      </div>
+      <div class="timeline__row">
+        <span class="timeline__when">Month 3</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">첫 결과 평가</h3>
+          <p class="timeline__txt">목표 도달 여부 확인 · 다음 분기 전략 협의.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__safe" data-reveal>
+      <b>계약 전까지는 한 푼도 들지 않습니다.</b>
+      <span style="color:var(--fg-muted);">— 무료 진단 + 1:1 상담까지 전부 무료입니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 7. WHY US (dark) ─────── -->
+<section class="section section--dark" id="why">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">06 · Why GEO</span>
+      <h2 class="h-display">
+        왜 <span class="serif">우리여야</span><br/>
+        하나요?
+      </h2>
+    </div>
+
+    <div class="why" data-reveal>
+      <div class="why__cell">
+        <span class="why__cell-num">01</span>
+        <h3>한국 1위 데이터</h3>
+        <p>네이버·카카오·ChatGPT·Gemini를 한꺼번에 봅니다. 해외 도구는 한국어 검색을 제대로 다루지 못합니다.</p>
+      </div>
+      <div class="why__cell">
+        <span class="why__cell-num">02</span>
+        <h3>의료법·광고법 자동 검토</h3>
+        <p>"최고", "유일" 같은 위험 표현을 시스템이 자동 차단합니다. 원장님 영업정지 걱정 없습니다.</p>
+      </div>
+      <div class="why__cell">
+        <span class="why__cell-num">03</span>
+        <h3>사람이 직접 관리</h3>
+        <p>AI가 다 알아서 해주는 건 환상입니다. 전담 매니저가 매주 직접 데이터를 확인합니다.</p>
+      </div>
+      <div class="why__cell">
+        <span class="why__cell-num">04</span>
+        <h3>결과로 말합니다</h3>
+        <p>3개월 안에 추천 노출 2배가 안 되면 다음 달은 무료입니다. 운영팀·법무 검토 완료된 보장.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 8. INDUSTRIES ─────── -->
+<section class="section" id="industries">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">07 · Industries</span>
+      <h2 class="h-display">
+        우리 업종에도 <span class="serif">되나요?</span>
+      </h2>
+      <p class="lead">국내 6개 업종에서 검증된 플레이북이 있습니다. 그 외 업종도 환영합니다.</p>
+    </div>
+
+    <div class="industries" data-reveal>
+      <a class="industry-card" href="#form">
+        <span class="industry-card__name">피부과 · 성형외과</span>
+        <p class="industry-card__txt">의료법 안전 표현 + 시술별 키워드 매핑. 가장 많은 사례가 모인 업종입니다.</p>
+        <span class="industry-card__cta">자세히 알아보기 →</span>
+      </a>
+      <a class="industry-card" href="#form">
+        <span class="industry-card__name">한의원</span>
+        <p class="industry-card__txt">증상별 키워드 그룹화. 동네 단위 추천 알고리즘에 강합니다.</p>
+        <span class="industry-card__cta">자세히 알아보기 →</span>
+      </a>
+      <a class="industry-card" href="#form">
+        <span class="industry-card__name">에스테틱 · 뷰티샵</span>
+        <p class="industry-card__txt">광고법 안전 콘텐츠 + 인플루언서 인용. SNS 노출까지 연동.</p>
+        <span class="industry-card__cta">자세히 알아보기 →</span>
+      </a>
+      <a class="industry-card" href="#form">
+        <span class="industry-card__name">법률사무소</span>
+        <p class="industry-card__txt">분쟁 유형별 질의 추적. 전문 카테고리 점유율 측정.</p>
+        <span class="industry-card__cta">자세히 알아보기 →</span>
+      </a>
+      <a class="industry-card" href="#form">
+        <span class="industry-card__name">음식점 · 프랜차이즈</span>
+        <p class="industry-card__txt">지역 + 메뉴 단위 추천. 본사·가맹점 동시 노출 설계.</p>
+        <span class="industry-card__cta">자세히 알아보기 →</span>
+      </a>
+      <a class="industry-card" href="#form">
+        <span class="industry-card__name">그 외 / 잘 모르겠음</span>
+        <p class="industry-card__txt">먼저 무료 진단부터. 우리 업종이 가능한지 24시간 안에 답변드립니다.</p>
+        <span class="industry-card__cta">진단 요청하기 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 9. PRICING ─────── -->
+<section class="section section--paper" id="pricing">
+  <div class="container">
+    <div class="sect-head" data-reveal>
+      <span class="eyebrow">08 · Pricing</span>
+      <h2 class="h-display">
+        먼저 <span class="serif">무료 진단</span>부터.
+      </h2>
+      <p class="lead">정확한 견적은 업종·매장 수에 따라 달라집니다. 상담 시 안내드립니다.</p>
+    </div>
+
+    <div class="pricing" data-reveal>
+      <div class="price-card">
+        <span class="price-card__name">기본 진단</span>
+        <div class="price-card__amount">
+          무료
+          <small>1회성 / PDF 리포트 발송</small>
+        </div>
+        <p class="price-card__txt">먼저 우리 가게의 AI 노출 상태부터 확인하세요.</p>
+        <ul>
+          <li>AI 추천 여부 확인</li>
+          <li>경쟁사 비교 리포트</li>
+          <li>개선 가능성 진단</li>
+          <li>PDF 리포트 카톡 발송</li>
+        </ul>
+        <a href="#form" class="btn btn--ghost btn--lg">진단 신청 →</a>
+      </div>
+
+      <div class="price-card price-card--feature">
+        <span class="price-card__name">정기 관리 <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; color:var(--accent); margin-left:8px;">RECOMMENDED</span></span>
+        <div class="price-card__amount">
+          <span class="currency">₩</span>견적
+          <small>월 단위 · 묶임 없음</small>
+        </div>
+        <p class="price-card__txt">매주 측정하고 매월 콘텐츠로 키웁니다. 사례 1–3 수준.</p>
+        <ul>
+          <li>매주 자동 측정 (500+ 쿼리)</li>
+          <li>월 단위 콘텐츠 제작 · 배포</li>
+          <li>월간 리포트 자동 발송</li>
+          <li>의료법·광고법 자동 검토</li>
+          <li>전담 매니저 격주 미팅</li>
+        </ul>
+        <a href="#form" class="btn btn--dark btn--lg">상담 신청 →</a>
+      </div>
+
+      <div class="price-card">
+        <span class="price-card__name">전담 매니저</span>
+        <div class="price-card__amount">
+          <span class="currency">₩</span>견적
+          <small>대형 매장 · 프랜차이즈용</small>
+        </div>
+        <p class="price-card__txt">매장 수가 많거나, 분기 단위 전략이 필요한 브랜드.</p>
+        <ul>
+          <li>전담 매니저 단독 배정</li>
+          <li>무제한 콘텐츠 · 키워드</li>
+          <li>주간 리포트 + 화상 미팅</li>
+          <li>분기 전략 워크숍</li>
+          <li>경쟁사 모니터링 무제한</li>
+        </ul>
+        <a href="#form" class="btn btn--ghost btn--lg">상담 신청 →</a>
+      </div>
+    </div>
+
+    <p class="pricing-note">
+      * 가격은 업종·매장 수·키워드 수에 따라 달라집니다. 정확한 견적은 무료 상담 후 안내드립니다.
+    </p>
+  </div>
+</section>
+
+<!-- ─────── 10. CTA / FORM (dark) ─────── -->
+<section class="section cta" id="form">
+  <div class="cta__aurora" aria-hidden="true"></div>
+  <div class="cta__inner">
+    <div data-reveal>
+      <span class="eyebrow" style="color:rgba(244,239,230,.65)">09 · Apply</span>
+      <h2 class="cta__title" style="margin-top:32px;">
+        1분이면<br/>
+        <span style="color:var(--accent);">끝납니다.</span>
+      </h2>
+      <p class="cta__sub">
+        영업 전화 안 합니다. 24시간 안에 카톡으로
+        진단 결과 PDF부터 보내드립니다.
+      </p>
+      <p class="cta__safe">
+        제출 정보는 1:1 상담 외 용도로 사용되지 않습니다.<br/>
+        상담 후 진행 여부는 자유롭게 결정하실 수 있습니다.
+      </p>
+    </div>
+
+    <form class="form" data-reveal style="--rdelay:120ms" id="leadForm" onsubmit="return window.__submitLead(event)">
+      <div class="form__field">
+        <label class="form__label" for="lead_name">어떻게 부르면 될까요?</label>
+        <input id="lead_name" name="name" type="text" placeholder="원장님 / 사장님 호칭 또는 이름" autocomplete="name" required />
+      </div>
+      <div class="form__field">
+        <label class="form__label" for="lead_phone">연락 받으실 번호</label>
+        <input id="lead_phone" name="phone" type="tel" placeholder="010-0000-0000" inputmode="tel" autocomplete="tel" required />
+      </div>
+      <div class="form__field">
+        <label class="form__label" for="lead_biz">어떤 업종이세요?</label>
+        <select id="lead_biz" name="biz" required>
+          <option value="">선택해주세요</option>
+          <option>피부과 · 성형외과</option>
+          <option>한의원</option>
+          <option>에스테틱 · 뷰티샵</option>
+          <option>법률사무소</option>
+          <option>음식점 · 프랜차이즈</option>
+          <option>기타</option>
+        </select>
+      </div>
+      <div class="form__field">
+        <label class="form__label" for="lead_msg">지금 가장 큰 고민이 뭔가요? <small>(선택)</small></label>
+        <textarea id="lead_msg" name="msg" rows="2" placeholder="예: 옆 병원이 갑자기 잘 된다는 소문이…"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--xl form__submit">
+        무료 진단 신청하기
+        <span class="btn-arrow">→</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ─────── 11. FAQ ─────── -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sect-head" data-reveal style="text-align:center; margin-left:auto; margin-right:auto; max-width:920px;">
+      <span class="eyebrow" style="justify-content:center;">10 · FAQ</span>
+      <h2 class="h-display">
+        <span class="serif">근데…?</span><br/>
+        남은 질문에 답해드립니다.
+      </h2>
+    </div>
+
+    <div class="faq" data-reveal>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          정말 무료인가요? 나중에 청구되나요?
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            진단은 0원입니다. 결과를 보고 결정하셔도 됩니다. 진단 단계에서 신용카드나 결제 정보를 받지 않습니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q">
+          의료법 위반 위험은 없나요?
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            콘텐츠 제작 시 의료법 56조 위반 표현("최고", "유일", "1위" 등)을 시스템이 자동 차단합니다. 또한 배포 전 반드시 원장님 직접 승인을 거칩니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q">
+          효과는 얼마나 걸리나요?
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            보통 4~6주에 첫 변화가 나타나고, 3개월에 결과를 확인할 수 있습니다. 단, 업종·경쟁 강도에 따라 다를 수 있습니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q">
+          우리 같은 작은 가게도 되나요?
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            직원 1명 매장도 진행하고 있습니다. 매장 규모는 상관없습니다. 다만 일정 비용은 동일하게 발생하므로 ROI 관점에서 매장 매출 규모를 함께 검토합니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q">
+          다른 광고대행사랑 뭐가 달라요?
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            기존 광고대행사는 네이버 광고 · 인스타 광고 등 "광고 노출"이 주된 업무입니다. 저희는 AI 추천 영역(ChatGPT·Perplexity·Gemini)을 다룹니다. 작업 자체가 다릅니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__q">
+          계약 기간에 묶이나요?
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__a">
+          <div class="faq-item__a-inner">
+            월 단위 해지가 가능합니다. 묶지 않습니다. 다만 첫 결과 확인을 위해 최소 3개월은 함께 진행하시기를 권합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:72px;">
+      <a href="#form" class="btn btn--dark btn--xl">
+        무료 진단 신청하기
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── FOOTER ─────── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="#top">
+        <span class="nav__logo-mark">G</span>
+        <span>GEO</span>
+      </a>
+      <p>Generative Engine Optimization for Korea. AI 검색 안에서 브랜드를 키웁니다.</p>
+      <p style="font-size:13px;">© 2026 GEO-AMS Inc. All rights reserved.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#how">작동 원리</a></li>
+        <li><a href="#cases">사례</a></li>
+        <li><a href="#pricing">가격</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#form">상담 신청</a></li>
+        <li><a href="#">기존 고객 로그인 →</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">사업자 정보</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>지오에이엠에스 (GEO-AMS Inc.)</span>
+    <span>대표 ○○○ · 사업자등록번호 000-00-00000 · 서울특별시 강남구</span>
+    <span>02-0000-0000 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f8909d949497b89f9d97d599958bd69b9795">[email&#160;protected]</a></span>
+  </div>
+</footer>
+
+<!-- ─────── SCRIPTS ─────── -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+
+<!-- React + Babel for Tweaks panel only -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
+
+</body>
+</html>

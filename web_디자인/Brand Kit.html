@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>지오픽 · 브랜드 로고 키트</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Black+Han+Sans&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #0c0c0d;
+    --paper: #ffffff;
+    --line: #e5e5e5;
+    --muted: #707072;
+    --accent: #FEDF35;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard', 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    background: #f4f4f3;
+  }
+
+  /* ── PAGE FRAME ─────────────────────────────────────────── */
+  .page { max-width: 1320px; margin: 0 auto; padding: 80px 56px 120px; }
+
+  .pre-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 14px; letter-spacing: 0.42em;
+    text-transform: uppercase; color: var(--muted);
+    margin: 0 0 16px;
+  }
+  .page-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 88px; line-height: 0.9; letter-spacing: -0.03em;
+    margin: 0 0 18px;
+  }
+  .page-sub {
+    font-family: 'Pretendard', sans-serif; font-weight: 500;
+    font-size: 18px; color: var(--muted); max-width: 720px;
+    line-height: 1.55; margin: 0 0 64px;
+  }
+
+  /* ── SECTION ────────────────────────────────────────────── */
+  .section { margin-top: 88px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 16px;
+    border-top: 1px solid #d8d6d0; padding-top: 22px; margin-bottom: 32px;
+  }
+  .section-num {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 14px; letter-spacing: 0.4em; color: var(--muted);
+  }
+  .section-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 36px; letter-spacing: -0.02em; margin: 0;
+  }
+
+  /* ── HERO LOGO PANEL ────────────────────────────────────── */
+  .hero {
+    background: var(--ink);
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 120px 80px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  .hero .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(70% 60% at 50% 50%, #000 30%, transparent 100%);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero .corner-l, .hero .corner-r {
+    position: absolute;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 12px; letter-spacing: 0.4em; color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+  .hero .corner-l { top: 32px; left: 40px; }
+  .hero .corner-r { top: 32px; right: 40px; }
+
+  /* ── LOGO RENDERS (the actual logo, shared) ─────────────── */
+  .logo-stack {
+    display: inline-flex; flex-direction: column; align-items: center; gap: 24px;
+  }
+  .logo-wordmark {
+    font-family: 'Black Han Sans', sans-serif;
+    line-height: 0.9; letter-spacing: -0.04em;
+    position: relative;
+    white-space: nowrap;
+  }
+  .logo-wordmark .dot {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .logo-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.42em; text-transform: uppercase;
+  }
+
+  /* ── VARIANT GRID ───────────────────────────────────────── */
+  .grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .card {
+    background: #fff; border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--line);
+    display: flex; flex-direction: column;
+  }
+  .card-canvas {
+    flex: 1;
+    min-height: 360px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    padding: 56px;
+  }
+  .card-canvas.dark { background: var(--ink); }
+  .card-canvas.light { background: var(--paper); }
+  .card-canvas.cream { background: #f1ece2; }
+  .card-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 22px;
+    border-top: 1px solid var(--line);
+    background: #fafafa;
+  }
+  .card-foot .meta {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .card-foot .meta .name {
+    font-family: 'Pretendard', sans-serif; font-weight: 700; font-size: 15px;
+  }
+  .card-foot .meta .desc {
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 12px;
+    color: var(--muted); letter-spacing: 0.06em;
+  }
+  .card-foot .dl {
+    display: flex; gap: 6px;
+  }
+  .dlbtn {
+    border: 1px solid #cacacb;
+    background: #fff;
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    color: var(--ink);
+  }
+  .dlbtn:hover { background: #111; color: #fff; border-color: #111; }
+
+  /* ── APPLICATION PREVIEW ─────────────────────────────────── */
+  .apps { display: flex; flex-direction: column; gap: 18px; }
+
+  /* Web header preview */
+  .webframe {
+    border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    background: #fff;
+  }
+  .webframe.dark { background: var(--ink); border-color: #1f1f21; }
+  .webhead {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 76px;
+    border-bottom: 1px solid var(--line);
+  }
+  .webframe.dark .webhead { border-bottom-color: rgba(255,255,255,0.08); }
+  .webnav {
+    display: flex; align-items: center; gap: 32px;
+    font-family: 'Pretendard', sans-serif; font-weight: 500; font-size: 15px;
+    color: var(--ink);
+  }
+  .webframe.dark .webnav { color: rgba(255,255,255,0.75); }
+  .webnav .cta {
+    padding: 9px 20px; background: var(--ink); color: #fff;
+    border-radius: 30px; font-weight: 600;
+  }
+  .webframe.dark .webnav .cta { background: #fff; color: var(--ink); }
+  .webhero {
+    padding: 80px 40px 96px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .webhero h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 64px; line-height: 0.95; letter-spacing: -0.03em;
+    margin: 0; color: inherit;
+  }
+  .webframe.dark .webhero h1 { color: #fff; }
+  .webhero p {
+    font-family: 'Pretendard', sans-serif; font-size: 18px;
+    color: var(--muted); max-width: 540px; margin: 0;
+  }
+  .webframe.dark .webhero p { color: rgba(255,255,255,0.6); }
+
+  /* Favicon row */
+  .fav-row {
+    display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
+  }
+  .fav-tab {
+    display: flex; align-items: center; gap: 10px;
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 10px 10px 0 0; padding: 10px 16px 10px 14px;
+    box-shadow: 0 2px 0 0 #e5e5e5;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+    color: #444;
+  }
+  .fav-tab .fav-glyph {
+    width: 18px; height: 18px; flex: 0 0 18px;
+  }
+  .fav-stand {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .fav-big {
+    width: 96px; height: 96px;
+    background: var(--ink);
+    border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .fav-label {
+    font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase;
+  }
+
+  /* ── CLEAR SPACE ────────────────────────────────────────── */
+  .clear {
+    background: #fff; border-radius: 20px; border: 1px solid var(--line);
+    padding: 64px; display: flex; justify-content: center;
+  }
+  .clear-frame {
+    position: relative; display: inline-block;
+    padding: 60px;
+    background-image:
+      linear-gradient(#FEDF35 1px, transparent 1px),
+      linear-gradient(90deg, #FEDF35 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center;
+  }
+  .clear-inner { background: #fff; padding: 18px 24px; }
+  .clear-cap {
+    text-align: center; margin-top: 18px;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase;
+  }
+
+  /* ── COLOR / TOKENS ─────────────────────────────────────── */
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .swatch {
+    border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+    background: #fff;
+  }
+  .swatch .chip { height: 140px; }
+  .swatch .info {
+    padding: 14px 16px; border-top: 1px solid var(--line);
+    font-family: 'Inter', sans-serif;
+  }
+  .swatch .info .nm { font-weight: 700; font-size: 14px; letter-spacing: 0.02em; }
+  .swatch .info .hex { font-weight: 500; font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+  /* ── DON'TS ─────────────────────────────────────────────── */
+  .donts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .dont {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden;
+  }
+  .dont-canvas {
+    height: 180px;
+    background: #fafafa;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .dont-x {
+    position: absolute; top: 12px; right: 12px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #D30005; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+  .dont-cap {
+    padding: 14px 18px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 14px; font-weight: 500;
+    border-top: 1px solid var(--line);
+  }
+
+  /* footer */
+  .doc-foot {
+    margin-top: 96px; padding-top: 32px;
+    border-top: 1px solid #d8d6d0;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif; font-size: 12px;
+    color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* responsive */
+  @media (max-width: 980px) {
+    .page { padding: 56px 24px 80px; }
+    .page-title { font-size: 56px; }
+    .grid { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2, 1fr); }
+    .donts { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <p class="pre-title">Brand Kit · 2026.05</p>
+  <h1 class="page-title">지오픽 로고<span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle"></span></h1>
+  <p class="page-sub">
+    "지오픽 Bold KR · Stadium" 방향의 대표 로고입니다. 검정 바탕에 흰 글자, 그리고 "픽"의 작은
+    노란 점이 시그니처입니다. 아래 변형 카드의 다운로드 버튼으로 SVG / PNG를 받아 웹페이지에 바로 사용하세요.
+  </p>
+
+  <!-- ── HERO ────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="corner-l">JIO·PICK</div>
+    <div class="corner-r">PRIMARY LOGO</div>
+
+    <div class="logo-stack">
+      <div class="logo-wordmark" style="font-size: 220px; color: #fff;">
+        <span>지오픽</span>
+        <span class="dot" style="width: 24px; height: 24px; right: -32px; top: 22px;"></span>
+      </div>
+      <div class="logo-tagline" style="font-size: 22px; color: rgba(255,255,255,0.55);">
+        GEOPICK · LOCATION CURATION
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VARIANT GRID ─────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">로고 변형</h2>
+    </div>
+
+    <div class="grid">
+      <!-- A. Primary dark with tagline -->
+      <div class="card" data-variant="primary-dark">
+        <div class="card-canvas dark">
+          <div class="logo-stack">
+            <div class="logo-wordmark" style="font-size: 124px; color: #fff;">
+              <span>지오픽</span>
+              <span class="dot" style="width: 14px; height: 14px; right: -18px; top: 14px;"></span>
+            </div>
+            <div class="logo-tagline" style="font-size: 14px; color: rgba(255,255,255,0.55);">
+              GEOPICK · LOCATION CURATION
+            </div>
+          </div>
+        </div>
+        <div class="card-foot">
+          <div class="meta">
+            <span class="name">Primary · 다크</span>
+            <span class="desc">PRIMARY ON BLACK · FULL LOCKUP</span>
+          </div>
+          <div class="dl">
+            <button class="dlbtn" data-action="svg">SVG</button>
+            <button class="dlbtn" data-action="png">PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- B. Primary light with tagline -->
+      <div class="card" data-variant="primary-light">
+        <div class="card-canvas light">
+          <div class="logo-stack">
+            <div class="logo-wordmark" style="font-size: 124px; color: var(--ink);">
+              <span>지오픽</span>
+              <span class="dot" style="width: 14px; height: 14px; right: -18px; top: 14px;"></span>
+            </div>
+            <div class="logo-tagline" style="font-size: 14px; color: var(--muted);">
+              GEOPICK · LOCATION CURATION
+            </div>
+          </div>
+        </div>
+        <div class="card-foot">
+          <div class="meta">
+            <span class="name">Primary · 라이트</span>
+            <span class="desc">PRIMARY ON WHITE · FULL LOCKUP</span>
+          </div>
+          <div class="dl">
+            <button class="dlbtn" data-action="svg">SVG</button>
+            <button class="dlbtn" data-action="png">PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- C. Compact dark -->
+      <div class="card" data-variant="compact-dark">
+        <div class="card-canvas dark">
+          <div class="logo-wordmark" style="font-size: 156px; color: #fff;">
+            <span>지오픽</span>
+            <span class="dot" style="width: 18px; height: 18px; right: -22px; top: 18px;"></span>
+          </div>
+        </div>
+        <div class="card-foot">
+          <div class="meta">
+            <span class="name">Compact · 다크</span>
+            <span class="desc">WORDMARK ONLY · HEADER · FOOTER</span>
+          </div>
+          <div class="dl">
+            <button class="dlbtn" data-action="svg">SVG</button>
+            <button class="dlbtn" data-action="png">PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- D. Compact light -->
+      <div class="card" data-variant="compact-light">
+        <div class="card-canvas light">
+          <div class="logo-wordmark" style="font-size: 156px; color: var(--ink);">
+            <span>지오픽</span>
+            <span class="dot" style="width: 18px; height: 18px; right: -22px; top: 18px;"></span>
+          </div>
+        </div>
+        <div class="card-foot">
+          <div class="meta">
+            <span class="name">Compact · 라이트</span>
+            <span class="desc">WORDMARK ONLY · HEADER · FOOTER</span>
+          </div>
+          <div class="dl">
+            <button class="dlbtn" data-action="svg">SVG</button>
+            <button class="dlbtn" data-action="png">PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- E. Mono dark -->
+      <div class="card" data-variant="mono-dark">
+        <div class="card-canvas dark">
+          <div class="logo-wordmark" style="font-size: 156px; color: #fff;">
+            <span>지오픽</span>
+            <span class="dot" style="width: 18px; height: 18px; right: -22px; top: 18px; background:#fff;"></span>
+          </div>
+        </div>
+        <div class="card-foot">
+          <div class="meta">
+            <span class="name">모노 · 다크</span>
+            <span class="desc">SINGLE-COLOR · PRINT · SMALL SIZES</span>
+          </div>
+          <div class="dl">
+            <button class="dlbtn" data-action="svg">SVG</button>
+            <button class="dlbtn" data-action="png">PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- F. Mono light (paper) -->
+      <div class="card" data-variant="mono-light">
+        <div class="card-canvas cream">
+          <div class="logo-wordmark" style="font-size: 156px; color: var(--ink);">
+            <span>지오픽</span>
+            <span class="dot" style="width: 18px; height: 18px; right: -22px; top: 18px; background:var(--ink);"></span>
+          </div>
+        </div>
+        <div class="card-foot">
+          <div class="meta">
+            <span class="name">모노 · 라이트</span>
+            <span class="desc">SINGLE-COLOR · PRINT · SMALL SIZES</span>
+          </div>
+          <div class="dl">
+            <button class="dlbtn" data-action="svg">SVG</button>
+            <button class="dlbtn" data-action="png">PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── APPLICATION: HEADER ──────────────────────────────── -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">웹페이지 적용 예시</h2>
+    </div>
+
+    <div class="apps">
+      <!-- Dark header -->
+      <div class="webframe dark">
+        <div class="webhead">
+          <div class="logo-wordmark" style="font-size: 36px; color: #fff;">
+            <span>지오픽</span>
+            <span class="dot" style="width: 7px; height: 7px; right: -10px; top: 4px;"></span>
+          </div>
+          <div class="webnav">
+            <span>서비스</span><span>요금제</span><span>고객사례</span><span>문의하기</span>
+            <span class="cta">시작하기</span>
+          </div>
+        </div>
+        <div class="webhero">
+          <h1>당신의 다음 장소,<br>지오픽이 픽합니다.</h1>
+          <p>위치 데이터와 큐레이션 엔진으로 의미 있는 장소만 추려서 보여드립니다.</p>
+        </div>
+      </div>
+
+      <!-- Light header -->
+      <div class="webframe">
+        <div class="webhead">
+          <div class="logo-wordmark" style="font-size: 36px; color: var(--ink);">
+            <span>지오픽</span>
+            <span class="dot" style="width: 7px; height: 7px; right: -10px; top: 4px;"></span>
+          </div>
+          <div class="webnav">
+            <span>서비스</span><span>요금제</span><span>고객사례</span><span>문의하기</span>
+            <span class="cta">시작하기</span>
+          </div>
+        </div>
+        <div class="webhero">
+          <h1>당신의 다음 장소,<br>지오픽이 픽합니다.</h1>
+          <p>위치 데이터와 큐레이션 엔진으로 의미 있는 장소만 추려서 보여드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── APPLICATION: FAVICON / APP ICON ──────────────────── -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">파비콘 / 앱 아이콘</h2>
+    </div>
+
+    <div class="card" style="padding: 48px;">
+      <div class="fav-row" style="justify-content: space-between;">
+        <!-- Browser tab mocks -->
+        <div style="display:flex; gap: 4px;">
+          <div class="fav-tab">
+            <svg class="fav-glyph" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#0c0c0d"/><text x="16" y="22" text-anchor="middle" font-family="Black Han Sans, sans-serif" font-size="18" fill="#fff">지</text><circle cx="25" cy="9" r="3" fill="#FEDF35"/></svg>
+            지오픽 · 메인
+          </div>
+          <div class="fav-tab" style="opacity: 0.5;">
+            <svg class="fav-glyph" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#d8d6d0"/></svg>
+            기타 사이트
+          </div>
+        </div>
+
+        <!-- App icon stand -->
+        <div class="fav-stand">
+          <div class="fav-big">
+            <svg viewBox="0 0 96 96" width="80" height="80">
+              <text x="48" y="68" text-anchor="middle" font-family="Black Han Sans, sans-serif" font-size="60" fill="#fff" letter-spacing="-2">지</text>
+              <circle cx="76" cy="22" r="8" fill="#FEDF35"/>
+            </svg>
+          </div>
+          <span class="fav-label">App Icon · 1024</span>
+        </div>
+
+        <!-- Download row -->
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+          <button class="dlbtn" data-variant="favicon" data-action="svg">파비콘 SVG</button>
+          <button class="dlbtn" data-variant="favicon" data-action="png">파비콘 PNG · 512</button>
+          <button class="dlbtn" data-variant="favicon-ico" data-action="png">파비콘 PNG · 32</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLEAR SPACE ──────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">여백 규칙</h2>
+    </div>
+
+    <div class="clear">
+      <div>
+        <div class="clear-frame">
+          <div class="clear-inner">
+            <div class="logo-wordmark" style="font-size: 96px; color: var(--ink);">
+              <span>지오픽</span>
+              <span class="dot" style="width: 11px; height: 11px; right: -14px; top: 10px;"></span>
+            </div>
+          </div>
+        </div>
+        <p class="clear-cap">최소 여백 = "지" 글자 높이의 1/2</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COLOR ────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">컬러 토큰</h2>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="chip" style="background: #0c0c0d;"></div>
+        <div class="info"><div class="nm">Ink Black</div><div class="hex">#0C0C0D · 본문 + 로고</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #FEDF35;"></div>
+        <div class="info"><div class="nm">Signal Yellow</div><div class="hex">#FEDF35 · 강조점 전용</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #ffffff; border-right: 1px solid var(--line);"></div>
+        <div class="info"><div class="nm">Paper</div><div class="hex">#FFFFFF · 배경</div></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #707072;"></div>
+        <div class="info"><div class="nm">Subtle Grey</div><div class="hex">#707072 · 보조 텍스트</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DON'TS ───────────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2 class="section-title">금지 사항</h2>
+    </div>
+
+    <div class="donts">
+      <div class="dont">
+        <div class="dont-canvas">
+          <div class="dont-x">×</div>
+          <div class="logo-wordmark" style="font-size: 56px; color: #1151FF;">
+            <span>지오픽</span>
+            <span class="dot" style="width: 7px; height: 7px; right: -9px; top: 6px; background:#D30005;"></span>
+          </div>
+        </div>
+        <div class="dont-cap">브랜드 외 색상 사용 금지</div>
+      </div>
+      <div class="dont">
+        <div class="dont-canvas">
+          <div class="dont-x">×</div>
+          <div class="logo-wordmark" style="font-size: 56px; color: var(--ink); transform: scaleX(1.6);">
+            <span>지오픽</span>
+            <span class="dot" style="width: 7px; height: 7px; right: -9px; top: 6px;"></span>
+          </div>
+        </div>
+        <div class="dont-cap">비율 임의 변형 금지</div>
+      </div>
+      <div class="dont">
+        <div class="dont-canvas" style="background: linear-gradient(135deg,#FEDF35,#1151FF);">
+          <div class="dont-x">×</div>
+          <div class="logo-wordmark" style="font-size: 56px; color: #fff;">
+            <span>지오픽</span>
+            <span class="dot" style="width: 7px; height: 7px; right: -9px; top: 6px;"></span>
+          </div>
+        </div>
+        <div class="dont-cap">복잡한 배경 위 사용 금지</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="doc-foot">
+    <span>지오픽 Brand Kit</span>
+    <span>v1.0 · Bold KR Stadium</span>
+  </div>
+
+</div>
+
+<!-- ─── DOWNLOAD ENGINE ────────────────────────────────────── -->
+<script>
+  // Build a self-contained SVG for a given variant.
+  // Fonts are embedded via @import in <style> so the SVG works standalone.
+  function buildSVG(variant) {
+    // Variant-specific knobs
+    const presets = {
+      'primary-dark':   { bg: '#0c0c0d', fg: '#ffffff', dot: '#FEDF35', tagline: true,  tagColor: 'rgba(255,255,255,0.55)' },
+      'primary-light':  { bg: '#ffffff', fg: '#0c0c0d', dot: '#FEDF35', tagline: true,  tagColor: '#707072' },
+      'compact-dark':   { bg: '#0c0c0d', fg: '#ffffff', dot: '#FEDF35', tagline: false },
+      'compact-light':  { bg: '#ffffff', fg: '#0c0c0d', dot: '#FEDF35', tagline: false },
+      'mono-dark':      { bg: '#0c0c0d', fg: '#ffffff', dot: '#ffffff', tagline: false },
+      'mono-light':     { bg: '#f1ece2', fg: '#0c0c0d', dot: '#0c0c0d', tagline: false },
+      'favicon':        { favicon: true, size: 512 },
+      'favicon-ico':    { favicon: true, size: 32 },
+    };
+    const p = presets[variant];
+
+    if (p.favicon) {
+      const s = p.size;
+      const r = Math.round(s * 0.18);
+      const fs = Math.round(s * 0.62);
+      const dotR = Math.round(s * 0.083);
+      const dotCX = Math.round(s * 0.78);
+      const dotCY = Math.round(s * 0.22);
+      return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s} ${s}" width="${s}" height="${s}">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;display=swap');
+      .ji { font-family: 'Black Han Sans', sans-serif; font-size: ${fs}px; fill: #fff; letter-spacing: -2px; }
+    </style>
+  </defs>
+  <rect width="${s}" height="${s}" rx="${r}" ry="${r}" fill="#0c0c0d"/>
+  <text x="${s/2}" y="${s * 0.72}" text-anchor="middle" class="ji">지</text>
+  <circle cx="${dotCX}" cy="${dotCY}" r="${dotR}" fill="#FEDF35"/>
+</svg>`;
+    }
+
+    // Full wordmark SVG.
+    // We size to fit: "지오픽" at 200px Black Han Sans is ~620px wide × ~190px tall.
+    const fs = 200;
+    const dotSize = 22;
+    const w = 760;
+    const tagH = p.tagline ? 56 : 0;
+    const h = 260 + tagH;
+
+    // x position of dot — anchored to right edge of wordmark
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;family=Barlow+Condensed:wght@700&amp;display=swap');
+      .word { font-family: 'Black Han Sans', sans-serif; font-size: ${fs}px; fill: ${p.fg}; letter-spacing: -8px; }
+      .tag  { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; fill: ${p.tagColor || '#707072'}; letter-spacing: 9px; }
+    </style>
+  </defs>
+  <rect width="${w}" height="${h}" fill="${p.bg}"/>
+  <g>
+    <text x="${w/2}" y="200" text-anchor="middle" class="word">지오픽</text>
+    <circle cx="${w/2 + 240}" cy="80" r="${dotSize/2}" fill="${p.dot}"/>
+    ${p.tagline ? `<text x="${w/2}" y="${260 + 32}" text-anchor="middle" class="tag">GEOPICK · LOCATION CURATION</text>` : ''}
+  </g>
+</svg>`;
+  }
+
+  function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 200);
+  }
+
+  async function svgToPng(svgText, scale = 2) {
+    // Parse viewBox to get intended size
+    const m = svgText.match(/viewBox="0 0 (\d+(?:\.\d+)?) (\d+(?:\.\d+)?)"/);
+    const w = m ? parseFloat(m[1]) : 800;
+    const h = m ? parseFloat(m[2]) : 400;
+
+    const blob = new Blob([svgText], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+
+    // Wait for fonts before drawing so the @import inside the SVG resolves
+    // against the document's already-loaded fonts (browsers won't fetch
+    // resources from inside the SVG image, so we rely on the page having
+    // them).
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+      img.src = url;
+    });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(w * scale);
+    canvas.height = Math.round(h * scale);
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    URL.revokeObjectURL(url);
+
+    return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+  }
+
+  // PNG fallback: render the variant card's canvas itself (most reliable for
+  // KR fonts). We use the existing live DOM via html-to-image-style canvas.
+  // Since we can't add libs, we instead render the SVG which contains font
+  // @import — for the file to be portable, when the user opens the SVG in a
+  // browser the font will load from Google. For PNG, we need the page's
+  // already-loaded font: we draw the SVG into <img> and into canvas. This
+  // works because the SVG is rendered via the <img> element which uses the
+  // SVG's own @import.
+
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('.dlbtn');
+    if (!btn) return;
+    const card = btn.closest('[data-variant]');
+    const variant = btn.dataset.variant || (card && card.dataset.variant);
+    if (!variant) return;
+    const action = btn.dataset.action;
+
+    btn.disabled = true;
+    const originalText = btn.textContent;
+    btn.textContent = '준비중…';
+
+    try {
+      const svgText = buildSVG(variant);
+      if (action === 'svg') {
+        downloadBlob(new Blob([svgText], { type: 'image/svg+xml' }), `geopick-${variant}.svg`);
+      } else if (action === 'png') {
+        // Favicon-32 should render at native 32, otherwise scale 2x
+        const scale = variant === 'favicon-ico' ? 1 : 2;
+        const png = await svgToPng(svgText, scale);
+        const suffix = variant === 'favicon-ico' ? '32' : (variant === 'favicon' ? '512' : '2x');
+        downloadBlob(png, `geopick-${variant}-${suffix}.png`);
+      }
+      btn.textContent = '✓ 완료';
+      setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 900);
+    } catch (err) {
+      console.error(err);
+      btn.textContent = '오류';
+      setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1200);
+    }
+  });
+</script>
+
+</body>
+</html>
